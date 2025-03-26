@@ -19,7 +19,10 @@ RUN dnf clean all && \
         gcc make glibc-devel libffi-devel openssl-devel \
     && dnf clean all
 
-COPY konveyor-v0.0.13.vsix / 
+# Add Kai extension from GitHub release
+RUN curl -L -o /konveyor.vsix https://github.com/konveyor/editor-extensions/releases/download/v0.0.13/konveyor-v0.0.13.vsix
+ENV DEFAULT_EXTENSIONS=/konveyor.vsix
+
 
 ENV DEFAULT_EXTENSIONS=/konveyor-v0.0.13.vsix    
 
