@@ -20,16 +20,18 @@ You'll analyze and modernize a real Java application using the Kai VS Code exten
 Create a `Containerfile` (based on Red Hat UBI for Dev Spaces):
 
 ```Dockerfile
-FROM registry.redhat.io/devspaces/udi-rhel9:3.18-2.1741779985
+# Use official Dev Spaces base 
+#FROM registry.redhat.io/devspaces/udi-rhel9:3.18-2.1741779985
+FROM quay.io/devfile/universal-developer-image:ubi9-latest
 
 USER root
 
-# Improve reliability of DNF
+# Avoid flaky mirrors, timeouts, or zchunk checksum mismatches
 RUN echo "fastestmirror=True" >> /etc/dnf/dnf.conf && \
     echo "skip_if_unavailable=True" >> /etc/dnf/dnf.conf && \
     echo "zchunk=False" >> /etc/dnf/dnf.conf
 
-# Install required dependencies
+# Install dependencies required by Konveyor AI + typical tools
 RUN dnf clean all && \
     dnf install -y --nobest --allowerasing \
         python3.12 python3.12-devel \
@@ -39,9 +41,12 @@ RUN dnf clean all && \
         gcc make glibc-devel libffi-devel openssl-devel \
     && dnf clean all
 
-# Add Kai extension
-COPY konveyor-v0.0.13.vsix /
-ENV DEFAULT_EXTENSIONS=/konveyor-v0.0.13.vsix
+# Add Kai extension from GitHub release
+RUN curl -L -o /konveyor.vsix https://github.com/konveyor/editor-extensions/releases/download/v0.0.13/konveyor-v0.0.13.vsix
+ENV DEFAULT_EXTENSIONS=/konveyor.vsix
+
+
+ENV DEFAULT_EXTENSIONS=/konveyor-v0.0.13.vsix    
 
 USER user
 ```
