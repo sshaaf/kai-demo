@@ -3,6 +3,11 @@ name: Deploy MkDocs to GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'docs/index.md'
+
+permissions:
+  contents: write  # Required to push to gh-pages
 
 jobs:
   deploy:
