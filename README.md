@@ -72,7 +72,17 @@ Launch a new Dev Spaces workspace using this `devfile.yaml`.
 
 ---
 
-<img width="1500" alt="Screenshot 2025-03-26 at 4 36 30 PM" src="https://github.com/user-attachments/assets/8a14043c-a63c-4bfa-888d-900cd995de84" />
+
+
+
+
+<img width="1221" alt="Screenshot 2025-03-26 at 4 40 04 PM" src="https://github.com/user-attachments/assets/fb1bc6f7-5b82-4394-82e1-26b2182827eb" />
+
+
+<img width="1500" alt="Screenshot 2025-03-26 at 4 36 30 PM" src="https://github.com/user-attachments/assets/1cd9e106-dca6-42d6-8262-3631ca8d801d" />
+
+
+<img width="1511" alt="Screenshot 2025-03-26 at 4 42 59 PM" src="https://github.com/user-attachments/assets/a4f437fb-467f-42c0-9200-d7dfa1ce13ea" />
 
 
 ## 📂 Step 3: Clone the Example Codebase
