@@ -1,0 +1,23 @@
+site_name: Konveyor AI - Dev Spaces Demo
+repo_url: https://github.com/rrbanda/kai-demo
+edit_uri: blob/main/docs/
+
+nav:
+  - Home: index.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
