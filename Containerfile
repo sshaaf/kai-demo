@@ -1,5 +1,6 @@
 # Use official Dev Spaces base 
-FROM registry.redhat.io/devspaces/udi-rhel9:3.18-2.1741779985
+#FROM registry.redhat.io/devspaces/udi-rhel9:3.18-2.1741779985
+FROM quay.io/devfile/universal-developer-image:ubi9-latest
 
 USER root
 
