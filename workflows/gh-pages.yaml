@@ -2,29 +2,20 @@ name: Deploy MkDocs to GitHub Pages
 
 on:
   push:
+    branches: [ main ]
     paths:
       - 'docs/index.md'
-      - 'docs/**'
-      - 'mkdocs.yml'
+
+permissions:
+  contents: write  # Required for pushing to gh-pages
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Needed for pushing to gh-pages branch using GITHUB_TOKEN
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-
-      - name: Install MkDocs Material
-        run: pip install mkdocs-material
-
-      - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
