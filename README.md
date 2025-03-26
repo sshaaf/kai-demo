@@ -96,9 +96,9 @@ cd coolstore
 
 ---
 
-## ⚙️ Step 4: Configure the Extension
+## ⚙️ Step 4: Configure the Extension specific details
 
-Ensure `.vscode/settings.json` includes:
+### Ensure `.vscode/settings.json` includes:
 
 ```json
 {
@@ -107,7 +107,16 @@ Ensure `.vscode/settings.json` includes:
 }
 ```
 
-You can also configure the AI model (e.g., GPT-4o) from the Kai extension settings panel in VS Code.
+### Confgure the LLM 
+
+### Configure source and target dependencies 
+
+
+https://github.com/user-attachments/assets/3e498252-f620-4985-bac7-e22b17819ec6
+
+
+
+
 
 ---
 
