@@ -199,7 +199,24 @@ Resolve JMS issues by selecting **Medium** effort:
 
 Understand how Kai orchestrates fixes behind the scenes:
 
-![Agentic Flow](https://github.com/konveyor/kai/raw/main/docs/scenarios/javaEE_to_quarkus/images/agentic-flow.png)
+```mermaid
+graph LR
+ A[Validator] -->
+ B[TaskManager] --> 
+ C{TaskRunners}
+   C -->D[Analyzer Agent]-->G
+   C -->E[MavenCompiler Agent]-->G
+   C -->F[Maven Dependency Agent]-->G
+ G[Reflection Agent]-- Feedback Loop -->A
+```
+
+- **Validator** Generate tasks on detected issues. Re-evaluated after each change to the codebase
+- **Task Manager** Queued by priority and passed to Task runners
+- **Task Runners** Understand how to handle specific types and errors and orchestrates agents.
+- **Analyzer Agent** Analyze migration issues and generate an LLM fix
+- **MavenCompiler Agent** Check compilation after fix
+- **MavenDependency Agent** Check dependencies after fix
+- **Reflection Agent** callibrate the source in conjunction to other agents. 
 
 ---
 
