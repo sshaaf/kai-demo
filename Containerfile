@@ -24,6 +24,6 @@ RUN curl -L -o /konveyor.vsix https://github.com/konveyor/editor-extensions/rele
 ENV DEFAULT_EXTENSIONS=/konveyor.vsix
 
 
-ENV DEFAULT_EXTENSIONS=/konveyor-v0.0.13.vsix    
+ENV DEFAULT_EXTENSIONS=/konveyor-v0.1.0.vsix   
 
 USER user
