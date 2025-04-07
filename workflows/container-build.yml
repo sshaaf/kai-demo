@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - Containerfile
-      - konveyor-v0.0.13.vsix
+      - konveyor-v0.1.0.vsix
 
 permissions:
   contents: read
