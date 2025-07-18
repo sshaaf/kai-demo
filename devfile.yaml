@@ -4,5 +4,5 @@ metadata:
 components:
   - name: kai-dev-container
     container:
-      image: quay.io/rbrhssa/kai-devspaces:latest
+      image: ghcr.io/rrbanda/kai-devspaces:latest
       memoryLimit: 8Gi
