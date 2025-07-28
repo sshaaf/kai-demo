@@ -12,7 +12,7 @@ RUN echo "fastestmirror=True" >> /etc/dnf/dnf.conf && \
 # Install dependencies required by Konveyor AI + typical tools
 RUN dnf clean all && \
     dnf install -y --nobest --allowerasing \
-        python3.12 python3.12-devel \
+        python3.12 python3.10-devel \
         java-17-openjdk-devel \
         nodejs maven \
         unzip git curl zsh \
